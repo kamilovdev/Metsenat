@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+  import Cbutton from '../Button/Cbutton.vue';
+</script>
 
 <template>
   <div class=" bg-white shadow-blurs">
@@ -8,11 +10,13 @@
         </RouterLink>
      
           <div class="flex gap-11">
-            <button class="text-[13px] py-2 px-5 bg-[#F1F1F3] rounded-md  font-bold">
-              Shohrux
-            </button>
+            <Cbutton  variant="user" title="Shoxrux">
+              <template #suffix>
+                  <span class="icon-user text-[24px] text-white bg-[#00AE69] px-1 pt-2 rounded"></span>
+              </template>
+            </Cbutton>
             <button>
-              6
+                <span class="icon-log-out text-[32px] text-[#B1B1B8]"></span>
             </button>
           </div>
       </div>
