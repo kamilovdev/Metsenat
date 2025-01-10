@@ -2,7 +2,7 @@
 
 <template>
 <div  class="containerMain">
-    <h1>Homiylar</h1>
+    <h1>Talabalar</h1>
 </div>
 
 </template>

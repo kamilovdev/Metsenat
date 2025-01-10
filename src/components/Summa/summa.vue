@@ -4,11 +4,10 @@ import client from '../../api/api'
 import { onMounted, ref } from 'vue'
 
 let dashboardResult = ref({})
-
 const GetPay = async () => {
   try {
-    const data = await client.get('dashboard/')
-    dashboardResult.value = data.data
+    const response = await client.get('dashboard/')
+    dashboardResult.value = response.data
   } catch (error) {
     console.log(error)
   }
@@ -21,23 +20,26 @@ onMounted(() => {
 </script>
 
 <template>
-    <div>
+    <div class="flex gap-7">
       <summaItem
-        iconClass="icon-money"
         :totalAmount="`${dashboardResult.total_paid}`"
         currency="UZS"
+        img="../../../public/dashboard/blueMoney.svg"
+        total="Jami to‘langan summa"
       />
 
       <summaItem
-        iconClass="icon-money"
         :totalAmount="`${dashboardResult.total_need}`"
         currency="UZS"
+        img="../../../public/dashboard/yellowMoney.svg"
+        total="Jami so‘ralgan summa"
       />
 
       <summaItem
-        iconClass="icon-money"
         :totalAmount="`${dashboardResult.total_must_pay}`"
         currency="UZS"
+        img="../../../public/dashboard/chocoMoney.svg"
+        total="To‘lanishi kerak summa"
       />
     </div>
   </template>

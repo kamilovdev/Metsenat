@@ -24,7 +24,7 @@
                 </li>
                 <li class="px-[54px] py-[10px] text-[12px] font-medium"
                     :class="{'bg-[#3366FF] border-[#3366FF] text-white': $route.path === '/talabalar'}">
-                    <RouterLink to="/">
+                    <RouterLink to="/talabalar">
                         Talabalar
                     </RouterLink>
                 </li>
@@ -32,7 +32,7 @@
             </ul>
 
             <div class="flex gap-5">
-                <Cform variant="search" title="Izlash">
+                <Cform variant="search" title="Izlash" class="flex justify-center items-center">
                     <template #prefix>
                         <span class="icon-search"></span>
                     </template>

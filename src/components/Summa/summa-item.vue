@@ -1,19 +1,20 @@
 <script setup>
 import { defineProps } from 'vue';
 
-// Define the props
 const props = defineProps({
-  iconClass: {
+  img: {
     type: String,
-    required: true
   },
   totalAmount: {
     type: Number,
-    required: true
+
   },
   currency: {
     type: String,
-    required: true
+  }
+  ,
+  total: {
+    type: String
   }
 });
 </script>
@@ -21,13 +22,12 @@ const props = defineProps({
 <template>
   <div>
     <div class="containerMain mt-5">
-      <div class="bg-white w-[381px] h-[96px] rounded-lg pl-6 flex gap-4 items-center">
+      <div class="bg-white w-[460px] h-[96px] rounded-lg pl-6 flex gap-4 items-center">
         <div class="w-12 h-12 rounded-xl bg-[#4C6FFF1A] flex items-center justify-center">
-
-          <span :class="iconClass" class="text-[28px]"></span>
+          <img :src="img" alt="" width="28">
         </div>
         <span>
-          <p class="text-[12px] font-normal text-[#7A7A9D]">Jami to‘langan summa</p>
+          <p class="text-[12px] font-normal text-[#7A7A9D]">{{total}}</p>
           <p class="text-[20px] font-bold text-[#2E384D]">
             {{ totalAmount.toLocaleString() }} <span class="text-[#B2B7C1]">{{ currency }}</span>
           </p>
@@ -37,4 +37,4 @@ const props = defineProps({
   </div>
 </template>
 
-<style scoped></style>
+<style scoped></style>  

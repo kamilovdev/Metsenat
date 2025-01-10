@@ -15,8 +15,7 @@ const props = defineProps({
 const buttonColor = computed(() => {
     switch (props.variant) {
         case 'search':
-            return 'bg-[#E8E8E8] w-[248px] h-[40px] pl-[12px] rounded-[5px] text-[#B1B1B8] text-[15px]';
-      
+            return 'bg-[#E8E8E8] w-[248px] h-[40px] pl-[12px] rounded-[5px] text-[#B1B1B8] text-[15px] flex items-center';
     }
 });
 </script>
@@ -24,7 +23,7 @@ const buttonColor = computed(() => {
 <template>
   <div :class="buttonColor">
     <slot name="prefix"></slot>
-    <input type="text" :placeholder="title" /> 
+    <input type="text" :placeholder="title" class="flex-1 bg-transparent outline-none" />
     <slot name="suffix"></slot>
   </div>
 </template>
