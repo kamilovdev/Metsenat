@@ -27,11 +27,11 @@
       total="Jami to‘langan summa" />
 
 
-    <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/blueMoney.svg"
+    <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/yellowMoney.svg"
       total="Jami to‘langan summa" />
 
 
-    <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/blueMoney.svg"
+    <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/chocoMoney.svg"
       total="Jami to‘langan summa" />
 
   </div>
