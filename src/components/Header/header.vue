@@ -2,7 +2,7 @@
     import {
         RouterLink , 
     } from 'vue-router';
-    import Cbutton from '../Button/Cbutton.vue';
+    import Cbutton from '../../components/Button/Cbutton.vue';
     import Cform from '../Form/Cform.vue';
 
 </script>
