@@ -1,47 +1,40 @@
 <script setup>
-import summaItem from './summa-item.vue';
-import client from '../../api/api'
-import { onMounted, ref } from 'vue'
+  import summaItem from './summa-item.vue';
+  import client from '../../api/api'
+  import {
+    onMounted,
+    ref
+  } from 'vue'
 
-let dashboardResult = ref({})
-const GetPay = async () => {
-  try {
-    const response = await client.get('dashboard/')
-    dashboardResult.value = response.data
-  } catch (error) {
-    console.log(error)
+  let dashboardResult = ref({})
+  const GetPay = async () => {
+    try {
+      const response = await client.get('dashboard/')
+      dashboardResult.value = response.data
+    } catch (error) {
+      console.log(error)
+    }
   }
-}
 
-onMounted(() => {
-  GetPay()
-})
-
+  onMounted(() => {
+    GetPay()
+  })
 </script>
 
 <template>
-    <div class="flex gap-7 justify-center">
-      <summaItem
-        :totalAmount="`${dashboardResult.total_paid}`"
-        currency="UZS"
-        img="../../../public/dashboard/blueMoney.svg"
-        total="Jami to‘langan summa"
-      />
+  <div class="flex gap-7 justify-center">
+    <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/blueMoney.svg"
+      total="Jami to‘langan summa" />
 
-      <summaItem
-        :totalAmount="`${dashboardResult.total_need}`"
-        currency="UZS"
-        img="../../../public/dashboard/yellowMoney.svg"
-        total="Jami so‘ralgan summa"
-      />
 
-      <summaItem
-        :totalAmount="`${dashboardResult.total_must_pay}`"
-        currency="UZS"
-        img="../../../public/dashboard/chocoMoney.svg"
-        total="To‘lanishi kerak summa"
-      />
-    </div>
-  </template>
+    <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/blueMoney.svg"
+      total="Jami to‘langan summa" />
+
+
+    <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/blueMoney.svg"
+      total="Jami to‘langan summa" />
+
+  </div>
+</template>
 
 <style scoped></style>
