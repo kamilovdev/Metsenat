@@ -24,15 +24,15 @@
 <template>
   <div class="flex gap-7 justify-center">
     <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/blueMoney.svg"
-      total="Jami to‘langan summa" />
+      total="Jami to‘langan summa"/>
 
 
     <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/yellowMoney.svg"
-      total="Jami to‘langan summa" />
+      total="Jami so‘ralgan summa" />
 
 
     <summaItem :totalAmount="`${dashboardResult.total_paid}`" currency="UZS" img="/dashboard/chocoMoney.svg"
-      total="Jami to‘langan summa" />
+      total="To‘lanishi kerak summa" />
 
   </div>
 </template>

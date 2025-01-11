@@ -29,7 +29,8 @@ const props = defineProps({
         <span>
           <p class="text-[12px] font-normal text-[#7A7A9D]">{{total}}</p>
           <p class="text-[20px] font-bold text-[#2E384D]">
-            {{ totalAmount.toLocaleString() }} <span class="text-[#B2B7C1]">{{ currency }}</span>
+            <vue3-autocounter :startAmount="0" :endAmount="totalAmount" :duration="3" ref="counter" :decimals="0" separator=" "/>
+            <span class="text-[#B2B7C1]">{{ currency }}</span>
           </p>
         </span>
       </div>
