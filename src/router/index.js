@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DashboardPage from '../pages/dashboardPage.vue'
-import homiy from '../pages/homiy.vue'
+import sponsor from '../pages/sponsor.vue'
 import talaba from '../pages/talaba.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,10 +12,10 @@ const router = createRouter({
           component: DashboardPage,
         },
         {
-          path: '/homiylar',
-          name: 'homiylar',
+          path: '/sponsor',
+          name: 'sponsor',
           meta: {layout: "Defoult"},
-          component: homiy
+          component: sponsor
         },
         {
           path: '/talabalar',

@@ -1,6 +1,7 @@
 <script setup>
-  import homiyItem from '../components/homiylar/homiy-item.vue';
+  import sponsorItem from '../components/sponsors/sponsor-item.vue';
   import client from '../api/api';
+  import sponsorNum from '../components/sponsors/sponsor-num.vue';
   import {
     onMounted,
     ref
@@ -48,10 +49,12 @@
       </thead>
 
       <tbody class="flex flex-col gap-1">
-        <homiyItem v-for="(homiy, index) in sponsorResult.results" :key="homiy.id" :data="homiy" :index="index" />
-
+        <sponsorItem v-for="(homiy, index) in sponsorResult.results" :key="homiy.id" :data="homiy" :index="index" />
       </tbody>
     </table>
+    <div>
+      <sponsorNum/>
+    </div>
   </div>
 
 </template>

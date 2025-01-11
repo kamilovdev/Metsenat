@@ -2,7 +2,7 @@
     import {
         RouterLink , 
     } from 'vue-router';
-    import Cbutton from '../Button/cbutton.vue';
+    import Cbutton from '../Button/Cbutton.vue';
     import Cform from '../Form/Cform.vue';
 
 </script>
@@ -18,8 +18,8 @@
                     </RouterLink>
                 </li>
                 <li class="border-r border-gray-300 px-[54px] py-[10px] text-[12px] font-medium"
-                    :class="{'bg-[#3366FF] border-[#3366FF]  text-white': $route.path === '/homiylar'}">
-                    <RouterLink to="/homiylar">
+                    :class="{'bg-[#3366FF] border-[#3366FF]  text-white': $route.path === '/sponsor'}">
+                    <RouterLink to="/sponsor">
                         Homiylar
                     </RouterLink>
                 </li>
