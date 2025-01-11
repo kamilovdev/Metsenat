@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="flex gap-7">
+    <div class="flex gap-7 justify-center">
       <summaItem
         :totalAmount="`${dashboardResult.total_paid}`"
         currency="UZS"
