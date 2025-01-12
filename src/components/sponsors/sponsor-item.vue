@@ -9,11 +9,11 @@
 
 <template>
   <div>
-    <RouterLink>
+    <RouterLink :to="/sponsorSingle/ + data.id">
       <div class="flex justify-between bg-white h-[68px] items-center px-[15px] rounded-lg mt-3">
         <span>
           <ul class="text-[15px] text-[#1D1D1F] flex gap-[33px]">
-            <li class="font-normal">{{ index + 1 }}</li>  <!-- Now using 'index' prop -->
+            <li class="font-normal">{{ index + 1 }}</li>
             <li class="font-medium">{{ data.full_name }}</li>
           </ul>
         </span>

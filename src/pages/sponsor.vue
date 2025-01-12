@@ -1,5 +1,6 @@
 <script setup>
   import sponsorItem from '../components/sponsors/sponsor-item.vue';
+  import sponsorNum from '../components/sponsors/sponsor-num.vue';
   import client from '../api/api';
   import {
     onMounted,
@@ -51,7 +52,10 @@
         <sponsorItem v-for="(homiy, index) in sponsorResult.results" :key="homiy.id" :data="homiy" :index="index" />
       </tbody>
     </table>
- 
+        <div>
+          <sponsorNum/>
+        </div>
+       <sponsorSingle/>
   </div>
 
 </template>
