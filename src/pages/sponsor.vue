@@ -55,7 +55,6 @@
         <div>
           <sponsorNum/>
         </div>
-       <sponsorSingle/>
   </div>
 
 </template>

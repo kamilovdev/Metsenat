@@ -1,5 +1,6 @@
 <script setup>
-  import { defineProps } from 'vue';
+  import {RouterLink} from 'vue-router'
+  import { defineProps, } from 'vue';
 
   const props = defineProps({
     data: Object,
@@ -9,7 +10,7 @@
 
 <template>
   <div>
-    <RouterLink :to="/sponsorSingle/ + data.id">
+    <RouterLink to="/sponsorSingle">
       <div class="flex justify-between bg-white h-[68px] items-center px-[15px] rounded-lg mt-3">
         <span>
           <ul class="text-[15px] text-[#1D1D1F] flex gap-[33px]">

@@ -18,7 +18,6 @@ import Cbutton from '../Button/Cbutton.vue';
             </Cbutton>
             <div class="flex gap-2">
               <Cbutton v-for="number in 7" :key="number" :variant="'number'" :title="number.toString()">
-
               </Cbutton>
             </div>
         </div>

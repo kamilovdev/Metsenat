@@ -25,7 +25,7 @@ const router = createRouter({
           component: talaba
         },
         {
-          path: '/sponsor/:id',
+          path: '/sponsorSingle',
           name: 'sponsorSingle',
           meta: {layout: "Empty"},
           component: sponsorSingle
