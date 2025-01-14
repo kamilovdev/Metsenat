@@ -18,7 +18,7 @@ const buttonColor = computed(() => {
         case 'filter':
             return 'py-[10px] px-[33px] bg-[#EDF1FD] rounded-[5px] text-[14px] font-medium text-[#3365FC] w-fit flex items-center gap-[10px]'
         case 'number':
-        return 'text-[15px] font-normal text-[#1D1D1F] bg-[#FFFFFF] px-1 py-[5] w-fit border border-[#DFE3E8] rounded-[4px]'
+        return 'text-[15px] font-normal text-[#1D1D1F] bg-[#FFFFFF] px-1 py-[5] w-fit border border-[#DFE3E8] rounded-[4px] flex items-center gap-[8px]'
         case 'edit':
         return 'py-3 px-8 bg-[#EDF1FD] rounded-[5px] text-[14px] font-medium text-[#3365FC] w-fit flex items-center gap-[10px]' 
     }

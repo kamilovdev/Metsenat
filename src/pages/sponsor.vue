@@ -1,6 +1,6 @@
 <script setup>
   import sponsorItem from '../components/sponsors/sponsor-item.vue';
-  import sponsorNum from '../components/sponsors/sponsor-num.vue';
+  import partners from '../components/Partners/partners.vue';
   import client from '../api/api';
   import {
     onMounted,
@@ -53,7 +53,7 @@
       </tbody>
     </table>
         <div>
-          <sponsorNum/>
+        <partners/>
         </div>
   </div>
 
