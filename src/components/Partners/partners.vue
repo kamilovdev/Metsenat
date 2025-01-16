@@ -4,7 +4,7 @@ import Pagination from '../Partners/pagination.vue';
 import client from '../../api/api';
 let partnerListResult = ref([])
 let partners = ref({})
-let page = ref(1)
+let page = ref(5)
 let page_size = ref(10)
 let search = ref('')
 let totalPages = ref(0)
