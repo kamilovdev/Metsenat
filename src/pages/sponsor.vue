@@ -1,24 +1,53 @@
 <script setup>
-  import sponsorItem from '../components/sponsors/sponsor-item.vue';
-  import partners from '../components/Partners/partners.vue';
-  import client from '../api/api';
   import {
     onMounted,
     ref
   } from 'vue'
+  import sponsorItem from '../components/sponsors/sponsor-item.vue';
+  import Pagination from '../components/Partners/pagination.vue';
 
+  import client from '../api/api';
+
+  let partnerListResult = ref([])
+  let partners = ref({})
+  let page = ref(5)
+  let page_size = ref(10)
+  let search = ref('')
+  let totalPages = ref(0)
   let sponsorResult = ref({})
-  const GetPay = async () => {
-    try {
-      const response = await client.get('sponsor-list/')
-      sponsorResult.value = response.data
-    } catch (error) {
-      console.log(error)
-    }
-  }
 
+
+ 
+const GetPartnersList = async () => {
+  try {
+    const { data } = await client.get('sponsor-list/', {
+      params: {
+        page: page.value,
+        page_size: page_size.value,
+        search: search.value
+      }
+    });
+    console.log(data);
+    partnerListResult.value = data.results
+    totalPages.value = Math.ceil(data.count / 10)
+    partners.value = data
+  } catch (error) {
+    console.log(error)
+  }
+}
+  
+  const onChangePageSize = (e) => {
+  page_size.value = e
+  GetPartnersList()
+}
+
+const onChangePage = (e) => {
+  page.value = e
+  GetPartnersList()
+
+}
   onMounted(() => {
-    GetPay()
+    GetPartnersList()
   })
 </script>
 
@@ -49,12 +78,23 @@
       </thead>
 
       <tbody class="flex flex-col gap-1">
-        <sponsorItem v-for="(homiy, index) in sponsorResult.results" :key="homiy.id" :data="homiy" :index="index" />
+        <sponsorItem v-for="(homiy, index) in partnerListResult" :key="homiy.id" :data="homiy" :index="index" />
       </tbody>
     </table>
-        <div>
-        <partners/>
-        </div>
+    <div>
+      <Pagination
+        :totalPages="totalPages"
+        :partners="partners"
+        :page_size="page_size"
+        :page="page"
+          @onChangePageSize="onChangePageSize"
+          @onChangePage="onChangePage"
+ >
+
+ </Pagination>
+    </div>
+
+
   </div>
 
 </template>
