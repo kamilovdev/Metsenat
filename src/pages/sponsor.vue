@@ -17,35 +17,45 @@
   let sponsorResult = ref({})
 
 
- 
-const GetPartnersList = async () => {
-  try {
-    const { data } = await client.get('sponsor-list/', {
-      params: {
-        page: page.value,
-        page_size: page_size.value,
-        search: search.value
-      }
-    });
-    console.log(data);
-    partnerListResult.value = data.results
-    totalPages.value = Math.ceil(data.count / 10)
-    partners.value = data
-  } catch (error) {
-    console.log(error)
+
+  const GetPartnersList = async () => {
+    try {
+      const {
+        data
+      } = await client.get('sponsor-list/', {
+        params: {
+          page: page.value,
+          page_size: page_size.value,
+          search: search.value
+        }
+      });
+      console.log(data);
+      partnerListResult.value = data.results
+      totalPages.value = Math.ceil(data.count / 10)
+      partners.value = data
+    } catch (error) {
+      console.log(error)
+    }
   }
-}
-  
+
   const onChangePageSize = (e) => {
-  page_size.value = e
-  GetPartnersList()
-}
+    page_size.value = e
+    GetPartnersList()
+  }
 
-const onChangePage = (e) => {
-  page.value = e
-  GetPartnersList()
+  const onChangePage = (e) => {
+    page.value = e
+    GetPartnersList()
+  }
+  const onChangePageMinus = (e) => {
+    page.value--  
+    GetPartnersList()
+  }
 
-}
+  const onChangePagePlus = (e) => {
+    page.value++
+    GetPartnersList()
+  }
   onMounted(() => {
     GetPartnersList()
   })
@@ -82,16 +92,9 @@ const onChangePage = (e) => {
       </tbody>
     </table>
     <div>
-      <Pagination
-        :totalPages="totalPages"
-        :partners="partners"
-        :page_size="page_size"
-        :page="page"
-          @onChangePageSize="onChangePageSize"
-          @onChangePage="onChangePage"
- >
-
- </Pagination>
+      <Pagination :totalPages="totalPages" :partners="partners" :page_size="page_size" :page="page"
+        @onChangePageSize="onChangePageSize" @onChangePage="onChangePage" @onChangePageMinus="onChangePageMinus" @onChangePagePlus="onChangePagePlus">
+      </Pagination>
     </div>
 
 

@@ -16,6 +16,7 @@ console.log(data);
 onMounted(() => {
   fetchSingleSponsor();
 });
+
 </script>
 
 <template>
