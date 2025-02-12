@@ -36,11 +36,11 @@
     }
     onMounted(() => {
         GetStudentList()
-  })
+    })
 </script>
 
 <template>
-    <div class="containerMain my-5 flex flex-col gap-7">   
+    <div class="containerMain my-5 flex flex-col gap-7">
         <div class="flex justify-end">
             <Cbutton variant="addStudent" title="Talaba qo‘shish">
                 <template #prefix>
@@ -70,11 +70,18 @@
                             </ul>
                         </span>
                     </div>
-                </thead>  
+                </thead>
             </table>
-                <tbody>
-                    <studentItem v-for="(student, index) in studentListResult" :key="student.id" :data="student" :index="index"/>
-                </tbody>          
+            <tbody class="flex flex-col gap-1">
+                <studentItem v-for="(student, index) in studentListResult" :key="student.id" :data="student"
+                    :index="index" />
+            </tbody>
+            <div>
+                <Pagination :totalPages="totalPages" :partners="partners" :page_size="page_size" :page="page"
+                    @onChangePageSize="onChangePageSize" @onChangePage="onChangePage"
+                    @onChangePageMinus="onChangePageMinus" @onChangePagePlus="onChangePagePlus">
+                </Pagination>
+            </div>
         </div>
     </div>
 </template>

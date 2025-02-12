@@ -4,11 +4,13 @@
     } from 'vue';
     import Cbutton from '../Button/Cbutton.vue';
 
-    const props = defineProps({
-        data: Array,
-        index: Number
-    })
-    const formarPrice = (value) => {
+     defineProps({
+        singlestudent:{
+            type: Object,
+            required: true
+        }
+     })
+      const formarPrice = (value) => {
         let val = (value / 1).toFixed('UZS').replace(' ', ' ')
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
     }
@@ -40,7 +42,7 @@
                         <img src="../../../public/sponsor/Avatar.svg" alt="">
                     </span>
                     <div class="w-fit">
-                        <p class="font-medium text-[#212121]">Isfandiyorov Iqbol Bobomirzayevich</p>
+                        <p class="font-medium text-[#212121]">{{ data.full_name }}</p>
                     </div>
                 </div>
 
